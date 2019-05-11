@@ -7,21 +7,21 @@
     </url>
     
     <url>
-        <loc>http://www.nailuo.com/404.html</loc>
-        <lastmod>2019-03-27T06:18:02.000Z</lastmod>
+        <loc>http://www.nailuo.com/about/</loc>
+        <lastmod>2019-05-11T07:00:18.276Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>http://www.nailuo.com/archive/</loc>
-        <lastmod>2019-03-27T06:18:02.000Z</lastmod>
+        <lastmod>2019-05-11T06:59:33.404Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://www.nailuo.com/about/</loc>
+        <loc>http://www.nailuo.com/404.html</loc>
         <lastmod>2019-03-27T06:18:02.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
