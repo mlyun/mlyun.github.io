@@ -138,14 +138,14 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -229,9 +229,11 @@
     本篇文章会分析下一个sql语句在mysql中的执行流程，包括sql的查询在mysql内部会怎么流转，sql语句的更新是怎么完成的。
 一、mysql架构分析
 下面是mysql的一个简要架构图：
-![upload successful](\images\pasted-1.png)
+
 mysql主要分为Server层和存储引擎层
-Server层：主要包括连接器、查询缓存、分析器、优......
+
+
+Server层：主要包括连接器、查询缓存、分析器、优化器、执行器等，所有跨存储引擎的功能都在这一层实现，比如存储过程、触发器、视图，......
         </div>
     </a>
     
