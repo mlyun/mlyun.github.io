@@ -3,12 +3,17 @@
 
     <sitemap>
         <loc>http://www.nailuo.com/post-sitemap.xml</loc>
-        <lastmod>2019-05-13T06:39:51.377Z</lastmod>
+        <lastmod>2019-05-13T10:24:10.673Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>http://www.nailuo.com/page-sitemap.xml</loc>
         <lastmod>2019-05-13T02:58:38.683Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://www.nailuo.com/category-sitemap.xml</loc>
+        <lastmod>2019-05-13T10:24:10.673Z</lastmod>
     </sitemap>
 
     <sitemap>
