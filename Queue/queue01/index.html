@@ -18,11 +18,11 @@
 <script type="text/javascript" src="/js/firework.js"></script>
     <title>
         
-          Tags - 奈落 | Blog
+          Queue的offer和add方法 - 奈落 | Blog
         
     </title>
 
-    <link rel="canonical" href="http://www.nailuo.com/tags/">
+    <link rel="canonical" href="http://www.nailuo.com/Queue/queue01/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -75,8 +75,8 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('/img/header_img/tag.png')
-            /*page*/
+            background-image: url('/img/article_header/article_bg.jpg')
+            /*post*/
         
     }
     
@@ -89,10 +89,18 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 
-                    <div class="site-heading">
-                        <h1>Tags</h1>
-                        <!--<hr class="small">-->
-                        <span class="subheading">Hey, this is Tags.</span>
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#Queue" title="Queue">Queue</a>
+                            
+                        </div>
+                        <h1>Queue的offer和add方法</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by 奈落 on
+                            2019-05-15
+                        </span>
                     </div>
                 
 
@@ -195,99 +203,188 @@
 
 
     <!-- Main Content -->
-    <!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <!-- 标签云 -->
-            <div id='tag_cloud' class="tags">
-                
-                    <a href="#Hexo" title="Hexo" rel="1">Hexo</a>
-                
-                    <a href="#Queue" title="Queue" rel="1">Queue</a>
-                
-                    <a href="#Mysql" title="Mysql" rel="1">Mysql</a>
-                
-            </div>
+    <!-- Modify by Yu-Hsuan Yen -->
 
-            <!-- 标签列表 -->
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Hexo">
-                    <span class="tag-text">Hexo</span>
-                </span>
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="queue">Queue</h1>
+<p><img src="/Queue/queue01/queue01.png" alt="Theme NaiLuo"><br>
+队列是一个典型的先进先出(FIFO)的容器. 即从容器的一端放入事物,从另一端取出,并且事物放入容器的顺序与取出的顺序是相同的.队列常常被当作一种可靠的将对象从程序的某个区域传输到另一个区域的途径.队列在并发编程中特别重要.因为他们可以安全地将对象从一个任务传输给另一个任务.<br>
+LinkedList提供了方法以支持队列的行为,并且它实现了Queue接口,因此LinkedList可以用作Queue的一种实现,通过将LinkedList向上转型为Queue,下面的示例使用了在Queue接口中与Queue相关的方法:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QueueDemo</span></span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printQ</span><span class="params">(Queue queue)</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(queue.peek()!=<span class="keyword">null</span>)&#123;</span><br><span class="line">      System.out.print(queue.remove()+<span class="string">" "</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    Queue&lt;Integer&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    Random rand = <span class="keyword">new</span> Random(<span class="number">47</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>; i&lt;<span class="number">10</span>; i++)&#123;</span><br><span class="line">      queue.offer(rand.nextInt(i+<span class="number">10</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    printQ(queue);</span><br><span class="line">    Queue&lt;Character&gt; qc = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">char</span> c : <span class="string">"Brontosaurus"</span>.toCharArray())&#123;</span><br><span class="line">      qc.offer(c);</span><br><span class="line">    &#125;</span><br><span class="line">    printQ(qc);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="执行结果">执行结果</h2>
+<pre><code>8 1 1 1 5 14 3 1 0 1
+B r o n t o s a u r u s
+</code></pre>
+<p><strong>方法</strong></p>
+<p><font color="#FF0000">add()</font> 一些队列有大小限制，因此如果想在一个满的队列中加入一个新项，多出的项就会被拒绝。<br>
+<font color="#FF0000">offer()</font> 方法是与Queue相关的方法之一,它在允许的情况下,将一个元素插入到队尾,或者返回false.<br>
+<font color="#FF0000">peek()</font> 和<font color="#FF0000">element()</font> 都将在不溢出的情况下返回队头,但是peek()方法在队列为空时返回null,而element()会抛出NoSuchElementException异常.<br>
+<font color="#FF0000">poll()</font> 和<font color="#FF0000">remove()</font> 方法都将移除并返回队头,但是poll在队列为空时返回null,而remove()会抛出NoSuchElementException异常.</p>
+<p>自动包装机制会自动的将nextInt()方法的int结果转换为queue所需要的Integer对象,将char c转换为qc所需要的Character对象.Queue接口窄化了对LinkedList的方法的访问权限,以使得只有恰当的方法才可以使用,因此,你能够访问的LinkedList的方法会变少(这里你实际上可以将queue转型回LinkedList,但是至少我们不鼓励这么做).</p>
+<p><strong>注意</strong></p>
+<p>与Queue相关的方法提供了完整而独立的功能.即,对于Queue锁继承的Collection,在不需要使用它的任何方法的情况下,就可以拥有一个可用的Queue.</p>
+
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/article/hexo-theme-mlyun/">
-                        <h2 class="post-title">
-                            [Hexo] Theme Nailuo
-                        </h2>
-                        
-                            <h3 class="post-subtitle">
-                                This is hexo theme Demo.
-                            </h3>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
+
                 <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Queue">
-                    <span class="tag-text">Queue</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/Queue/queue01/">
-                        <h2 class="post-title">
-                            Queue的offer和add方法
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="Mysql">
-                    <span class="tag-text">Mysql</span>
-                </span>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <div class="post-preview">
-                     <a href="/Mysql/mysql01/">
-                        <h2 class="post-title">
-                            一条SQL语句在MySQL中是如何执行的
-                        </h2>
-                        
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </div>
-                <hr>
-                
-            </div>
-            
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/Mysql/mysql01/" data-toggle="tooltip" data-placement="top" title="一条SQL语句在MySQL中是如何执行的">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
 
+                <br>
 
+                <!--打赏-->
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+  
+    <style>
+      span.toc-nav-number{
+        display: none
+      }
+    </style>
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#queue"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Queue</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#执行结果"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">&#x6267;&#x884C;&#x7ED3;&#x679C;</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Queue" title="Queue">Queue</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://blog.csdn.net/" target="_blank">CSDN Blog 奈落</a></li>
+                    
+                        <li><a href="http://dockone.io/people/" target="_blank">DockOne 奈落</a></li>
+                    
+                        <li><a href="https://yq.aliyun.com/u/" target="_blank">阿里云栖社区 奈落</a></li>
+                    
+                </ul>
+                
+            </div>
         </div>
     </div>
-</div>
+</article>
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
 
 
     <!-- Footer -->
