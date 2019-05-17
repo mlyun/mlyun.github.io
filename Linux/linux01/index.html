@@ -18,11 +18,11 @@
 <script type="text/javascript" src="/js/firework.js"></script>
     <title>
         
-          奈落 | Blog
+          虚拟机安装问题 - 奈落 | Blog
         
     </title>
 
-    <link rel="canonical" href="http://www.nailuo.com/tags/Mysql/">
+    <link rel="canonical" href="http://www.nailuo.com/Linux/linux01/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -75,8 +75,8 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('/img/header_img/archives-widget.jpg')
-            /*page*/
+            background-image: url('/img/article_header/article_bg.jpg')
+            /*post*/
         
     }
     
@@ -89,10 +89,18 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 
-                    <div class="site-heading">
-                        <h1>奈落</h1>
-                        <!--<hr class="small">-->
-                        <span class="subheading">个人博客</span>
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
+                            
+                        </div>
+                        <h1>虚拟机安装问题</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by 奈落 on
+                            2019-05-17
+                        </span>
                     </div>
                 
 
@@ -195,264 +203,205 @@
 
 
     <!-- Main Content -->
-    <!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
+    <!-- Modify by Yu-Hsuan Yen -->
 
-<!-- USE SIDEBAR -->
-    <!-- Post Container -->
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
-                
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <!-- 归档列表 -->
-            
-            
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
 
-             <!-- 归档列表 -->
+                <h1 id="虚拟机安装问题">虚拟机安装问题</h1>
+<p><strong>安装虚拟机时报错:</strong><br>
+<img src="/Linux/linux01/01.png" alt="Theme NaiLuo"></p>
+<p><strong>Leomoon cpu-v</strong></p>
+<p>百度下载这款软件,打开如果显示“此处理器支持虚拟化技术,但在BIOS中被禁用.”,VT-X启用状态为红色的×号,说明你的CPU支持虚拟化技术在BIOS中禁用了.<br>
+<img src="/Linux/linux01/02.png" alt="Theme NaiLuo"></p>
+<p><strong>解决方法</strong></p>
+<p>1.重启电脑,一直按F2键,进入BIOS设置<br>
+2.点击“高级模式F”<br>
+3.点击“高级”选项,进入高级设置页面<br>
+4.点击“处理器设置”选项,进入处理器设置页面,找到“Intel Virtual Technology”选项<br>
+5.将其状态改为“Enabled”.<br>
+6.保存退出重启电脑即可.</p>
+<p>##问题2##<br>
+<img src="/Linux/linux01/10.jpg" alt="Theme NaiLuo"><br>
+出现此问题的原因是Device Guard或Credential Guard与Workstation不兼容.</p>
+<p><strong>解决方法</strong></p>
+<p>第一步:<br>
+<img src="/Linux/linux01/11.png" alt="Theme NaiLuo"><br>
+第二步:<br>
+<img src="/Linux/linux01/12.png" alt="Theme NaiLuo"><br>
+<img src="/Linux/linux01/13.png" alt="Theme NaiLuo"><br>
+第三步:<br>
+<img src="/Linux/linux01/14.png" alt="Theme NaiLuo"><br>
+<img src="/Linux/linux01/15.png" alt="Theme NaiLuo"><br>
+注意看第三步,我就是在这里卡了一小时,一直没注意Hyper-V的服务</p>
 
-            
-            <div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2019">
-                    <span class="tag-text">2019</span>
-                </span>
-                <ul>
                 
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li >
-                    05-17
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/Linux/linux01/" style="color: #0085a1">
-                        <span>
-                            虚拟机安装问题
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li >
-                    05-15
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/List/list01/" style="color: #0085a1">
-                        <span>
-                            List的简单介绍
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li >
-                    05-15
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/Queue/queue01/" style="color: #0085a1">
-                        <span>
-                            Queue的简单介绍
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li >
-                    05-13
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/Mysql/mysql01/" style="color: #0085a1">
-                        <span>
-                            一条SQL语句在MySQL中是如何执行的
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li >
-                    05-11
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/article/hexo-theme-mlyun/" style="color: #0085a1">
-                        <span>
-                            [Hexo] Theme Nailuo
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/List/list01/" data-toggle="tooltip" data-placement="top" title="List的简单介绍">Next Post &rarr;</a>
+                        </li>
+                    
                 </ul>
-            </div>
-            
-
-
-        </div>
-    </div>
-</div>
 
                 <br>
 
+                <!--打赏-->
+                
+                    <div class="reward">
+                        <div class="reward-button">赏 <span class="reward-code"> 
+                            <span class="alipay-code"> <img class="alipay-img" src="alipay_url"><b>支付宝打赏</b></span> 
+                            <span class="wechat-code"> <img class="wechat-img" src="wechatpay_url"><b>微信打赏</b> </span>
+                            </span></div>
+                        <p class="reward-notice">赞赏一下</p>
+                    </div>
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
                 <!-- require APlayer -->
                 
 
-                <!-- 如果开启评论功能 -->
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+  
+    <style>
+      span.toc-nav-number{
+        display: none
+      }
+    </style>
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#虚拟机安装问题"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x865A;&#x62DF;&#x673A;&#x5B89;&#x88C5;&#x95EE;&#x9898;</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://blog.csdn.net/" target="_blank">CSDN Blog 奈落</a></li>
+                    
+                        <li><a href="http://dockone.io/people/" target="_blank">DockOne 奈落</a></li>
+                    
+                        <li><a href="https://yq.aliyun.com/u/" target="_blank">阿里云栖社区 奈落</a></li>
+                    
+                </ul>
                 
             </div>
-
-          <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Featured Tags -->
-
-<section>
-    <!-- no hr -->
-    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-    <div class="tags">
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
+        </div>
     </div>
-</section>
+</article>
 
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-    <h5><a href="/about/">ABOUT ME</a></h5>
-    <div class="short-about">
 
-        
-            <img id = "avatar_pic" src="/img/avatar/ironman.png" />
-        
 
-        
-            <p>Stay hungry,Stay foolish</p>
-        
 
-        <!-- SNS Link -->
-        <ul class="list-inline">
-            
-            
-            
 
-            
 
-            
 
-            
-                <li>
-                    <a target="_blank"  href="https://github.com/nailuo">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </a>
-                </li>
-            
-            
-            
-            
-        </ul>
-    </div>
-</section>
 
-        <hr>
-    
-        
-  <h5>RECENT POSTS</h3>
-  <div class="widget">
-    <ul>
-      
-        <li>
-          <a href="/Linux/linux01/">虚拟机安装问题</a>
-        </li>
-      
-        <li>
-          <a href="/List/list01/">List的简单介绍</a>
-        </li>
-      
-        <li>
-          <a href="/Queue/queue01/">Queue的简单介绍</a>
-        </li>
-      
-        <li>
-          <a href="/Mysql/mysql01/">一条SQL语句在MySQL中是如何执行的</a>
-        </li>
-      
-        <li>
-          <a href="/article/hexo-theme-mlyun/">[Hexo] Theme Nailuo</a>
-        </li>
-      
-    </ul>
-  </div>
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
 
-        <hr>
-    
-        <!-- Friends Blog -->
-
-<h5>FRIENDS</h5>
-<ul class="list-inline">
-
-    
-        <li><a href="http://blog.csdn.net/" target="_blank">CSDN Blog 奈落</a></li>
-    
-        <li><a href="http://dockone.io/people/" target="_blank">DockOne 奈落</a></li>
-    
-        <li><a href="https://yq.aliyun.com/u/" target="_blank">阿里云栖社区 奈落</a></li>
-    
-</ul>
-
-        <hr>
-    
-        
-    <h5>ARCHIVES</h5>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">5</span></li></ul>
-    </div>
-
-        <hr>
-    
-</div>
-
-        
-    </div>
-</div>
 
 
     <!-- Footer -->
