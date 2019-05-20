@@ -22,7 +22,7 @@
         
     </title>
 
-    <link rel="canonical" href="http://www.nailuo.com/article/Hdfs01/">
+    <link rel="canonical" href="http://www.nailuo.com/Hadoop/Hdfs01/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -91,6 +91,8 @@
                 
                     <div class="post-heading">
                         <div class="tags">
+                            
+                              <a class="tag" href="/tags/#Hadoop" title="Hadoop">Hadoop</a>
                             
                         </div>
                         <h1>快速搭建Hdfs</h1>
@@ -229,34 +231,75 @@ hostnamectl set-hostname master   （立即生效）<br>
 hostnamectl set-hostname slave1    （立即生效）<br>
 hostnamectl set-hostname slave2    （立即生效）<br>
 测试:<br>
-<img src="/article/Hdfs01/ping.png" alt="Theme NaiLuo"></p>
+<img src="/Hadoop/Hdfs01/ping.png" alt="Theme NaiLuo"></p>
 </li>
 <li>
 <p>安装jdk,配置环境变量:<br>
 测试:<br>
-<img src="/article/Hdfs01/java.png" alt="Theme NaiLuo"><br>
+<img src="/Hadoop/Hdfs01/java.png" alt="Theme NaiLuo"><br>
 环境变量配置<br>
-<img src="/article/Hdfs01/profile.png" alt="Theme NaiLuo"></p>
+<img src="/Hadoop/Hdfs01/profile.png" alt="Theme NaiLuo"></p>
 </li>
 </ol>
 <h2 id="安装rz">安装rz</h2>
-<p>lrzsz是一款在linux里可代替ftp上传和下载的程序。</p>
+<p>lrzsz是一款在linux里可代替ftp上传和下载的程序.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install lrzsz</span><br></pre></td></tr></table></figure>
 <h2 id="设置ssh免密码登录">设置SSH免密码登录</h2>
-<p>在我的master机器上也就是我192.168.111.10这台机器，这台机器将会成为我的Hadoop集群NameNode节点.<br>
-进入master这台机器的的根目录输入命令:</p>
-<figure class="highlight plain"><figcaption><span>-t rsa```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">把生成的公钥id发送到 slave1、slave2机器上,输入命令:  </span><br><span class="line">```ssh-copy-id slave1```  </span><br><span class="line">slave1会要求你输入slave1这台机器上的密码,密码输入正确后你可以尝试使用:  </span><br><span class="line">```ssh slave1```  </span><br><span class="line">来登陆slave1测试是否配置成功,添加其他的slave2也是同样的操作.</span><br><span class="line"></span><br><span class="line">## 下载Hadoop</span><br><span class="line">https://archive.apache.org/dist/hadoop/common/</span><br><span class="line">官网可以下载各个版本的Hadoop,我选择了[hadoop-2.6.0.tar.gz](https://archive.apache.org/dist/hadoop/common/hadoop-2.6.0/hadoop-2.6.0.tar.gz)</span><br><span class="line"></span><br><span class="line">## 开始搭建HDFS</span><br><span class="line"> 1. 下载完成后使用rz上传到 /home/mly/下.</span><br><span class="line"> 2. 使用```tar -zxvf```解压Hadoop.</span><br><span class="line"> 3. 配置hadoop的环境变量,在上图已有配置截图. </span><br><span class="line"> 4. 输入```source /etc/profile```重新加载环境变量.</span><br><span class="line"> 5. 然后使用hadoop命令测试,出现下图则配置成功. </span><br><span class="line"> ![Theme NaiLuo](Hdfs01/hadoop.png)</span><br><span class="line"> 6. 使用EverEdit连接master.   </span><br><span class="line"> EverEdit链接: https://pan.baidu.com/s/1CjqfBM8UEU6WpZXfn1DBcA 提取码: x17y </span><br><span class="line"> ![Theme NaiLuo](Hdfs01/e1.png)</span><br><span class="line"> ![Theme NaiLuo](Hdfs01/e2.png)</span><br><span class="line"> ![Theme NaiLuo](Hdfs01/e3.png)</span><br><span class="line"> 7. 找到/home/mly/hadoop-2.6.0/etc/hadoop/目录下.</span><br><span class="line"> ![Theme NaiLuo](Hdfs01/ml.png)</span><br><span class="line"> 8. 修改hadoop-env.sh文件</span><br><span class="line"> ![Theme NaiLuo](Hdfs01/jdk8.png)</span><br><span class="line"> 9. 修改core-site.xml文件</span><br><span class="line"> ![Theme NaiLuo](Hdfs01/core-site.png)</span><br><span class="line"> 10. 修改hdfs-site.xml文件</span><br><span class="line"> ![Theme NaiLuo](Hdfs01/hdfs-site.png)</span><br><span class="line"> 11. 修改mapred-site.xml文件</span><br><span class="line"> ![Theme NaiLuo](Hdfs01/mapred-site.png)</span><br><span class="line"> 12. 修改slaves文件</span><br><span class="line"> ![Theme NaiLuo](Hdfs01/slaves.png)</span><br><span class="line"> 13. 修改yarn-site.xml文件</span><br><span class="line"> ![Theme NaiLuo](Hdfs01/yarn-site.png)</span><br><span class="line"> 14. 使用scp -r /home/mly/hadoop-2.6.0 root@slave1:/home/mly将配置好的文件分别发送给slave1与slave2</span><br><span class="line"> </span><br><span class="line">## 格式化NameNode、启动HDFS系统</span><br><span class="line">在master这台主机上 输入命令HDFS格式化命令</span><br><span class="line"></span><br><span class="line">&gt; 格式化HDFS：```hdfs namenode -format</span><br></pre></td></tr></table></figure>
-<p>输入启动HDFS系统命令</p>
+<p>进入master这台机器的的根目录输入命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
+<p>把生成的公钥id发送到 slave1、slave2机器上,输入命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id slave1</span><br></pre></td></tr></table></figure>
+<p>slave1会要求你输入slave1这台机器上的密码,密码输入正确后你可以尝试使用:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh slave1</span><br></pre></td></tr></table></figure>
+<p>来登陆slave1测试是否配置成功,添加其他的slave2也是同样的操作.</p>
+<h2 id="下载hadoop">下载Hadoop</h2>
+<p><a href="https://archive.apache.org/dist/hadoop/common/" target="_blank" rel="noopener">https://archive.apache.org/dist/hadoop/common/</a><br>
+官网可以下载各个版本的Hadoop,我选择了<a href="https://archive.apache.org/dist/hadoop/common/hadoop-2.6.0/hadoop-2.6.0.tar.gz" target="_blank" rel="noopener">hadoop-2.6.0.tar.gz</a></p>
+<h2 id="开始搭建hdfs">开始搭建HDFS</h2>
+<ol>
+<li>下载完成后使用rz上传到 /home/mly/下.</li>
+<li>使用&quot;tar -zxvf&quot;解压Hadoop.</li>
+<li>配置hadoop的环境变量,在上图已有配置截图.</li>
+<li>输入&quot;source /etc/profile&quot;重新加载环境变量.</li>
+<li>然后使用hadoop命令测试,出现下图则配置成功.<br>
+<img src="/Hadoop/Hdfs01/hadoop.png" alt="Theme NaiLuo"></li>
+<li>使用EverEdit连接master.<br>
+EverEdit链接: <a href="https://pan.baidu.com/s/1CjqfBM8UEU6WpZXfn1DBcA" target="_blank" rel="noopener">https://pan.baidu.com/s/1CjqfBM8UEU6WpZXfn1DBcA</a> 提取码: x17y<br>
+<img src="/Hadoop/Hdfs01/e1.png" alt="Theme NaiLuo"><br>
+<img src="/Hadoop/Hdfs01/e2.png" alt="Theme NaiLuo"><br>
+<img src="/Hadoop/Hdfs01/e3.png" alt="Theme NaiLuo"></li>
+<li>找到/home/mly/hadoop-2.6.0/etc/hadoop/目录下.<br>
+<img src="/Hadoop/Hdfs01/ml.png" alt="Theme NaiLuo"></li>
+<li>修改hadoop-env.sh文件<br>
+<img src="/Hadoop/Hdfs01/jdk8.png" alt="Theme NaiLuo"></li>
+<li>修改core-site.xml文件<br>
+<img src="/Hadoop/Hdfs01/core-site.png" alt="Theme NaiLuo"></li>
+<li>修改hdfs-site.xml文件<br>
+<img src="/Hadoop/Hdfs01/hdfs-site.png" alt="Theme NaiLuo"></li>
+<li>修改mapred-site.xml文件<br>
+<img src="/Hadoop/Hdfs01/mapred-site.png" alt="Theme NaiLuo"></li>
+<li>修改slaves文件<br>
+<img src="/Hadoop/Hdfs01/slaves.png" alt="Theme NaiLuo"></li>
+<li>修改yarn-site.xml文件<br>
+<img src="/Hadoop/Hdfs01/yarn-site.png" alt="Theme NaiLuo"></li>
+<li>使用scp -r /home/mly/hadoop-2.6.0 root@slave1:/home/mly将配置好的文件分别发送给slave1与slave2</li>
+</ol>
+<h2 id="格式化namenode-启动hdfs系统">格式化NameNode、启动HDFS系统</h2>
+<p>在master这台主机上 输入命令HDFS格式化命令</p>
+<blockquote>
+<p>格式化HDFS：<code>hdfs namenode -format</code><br>
+输入启动HDFS系统命令</p>
+</blockquote>
 <blockquote>
 <p>输入命令：<a href="http://start-all.sh" target="_blank" rel="noopener">start-all.sh</a></p>
 </blockquote>
 <h6 id="输入jps查看节点是否启动">输入jps查看节点是否启动</h6>
-<p><img src="/article/Hdfs01/jps.png" alt="Theme NaiLuo"><br>
-<img src="/article/Hdfs01/jps2.png" alt="Theme NaiLuo"><br>
-<img src="/article/Hdfs01/jps3.png" alt="Theme NaiLuo"></p>
+<p><img src="/Hadoop/Hdfs01/jps.png" alt="Theme NaiLuo"><br>
+<img src="/Hadoop/Hdfs01/jps2.png" alt="Theme NaiLuo"><br>
+<img src="/Hadoop/Hdfs01/jps3.png" alt="Theme NaiLuo"></p>
 <h6 id="输入http1921681111050070查看是否启动成功">输入http://192.168.111.10:50070查看是否启动成功</h6>
-<p><img src="/article/Hdfs01/m.png" alt="Theme NaiLuo"><br>
-<img src="/article/Hdfs01/m2.png" alt="Theme NaiLuo"></p>
+<p><img src="/Hadoop/Hdfs01/m.png" alt="Theme NaiLuo"><br>
+<img src="/Hadoop/Hdfs01/m2.png" alt="Theme NaiLuo"></p>
 
                 
 
@@ -330,7 +373,7 @@ hostnamectl set-hostname slave2    （立即生效）<br>
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#快速hdfs集群笔记"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x5FEB;&#x901F;HDFS&#x96C6;&#x7FA4;&#x7B14;&#x8BB0;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#节点的介绍"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">&#x8282;&#x70B9;&#x7684;&#x4ECB;&#x7ECD;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#准备"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">&#x51C6;&#x5907;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#安装rz"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">&#x5B89;&#x88C5;rz</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#设置ssh免密码登录"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">&#x8BBE;&#x7F6E;SSH&#x514D;&#x5BC6;&#x7801;&#x767B;&#x5F55;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#输入jps查看节点是否启动"><span class="toc-nav-number">1.4.0.0.0.1.</span> <span class="toc-nav-text">&#x8F93;&#x5165;jps&#x67E5;&#x770B;&#x8282;&#x70B9;&#x662F;&#x5426;&#x542F;&#x52A8;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#输入http1921681111050070查看是否启动成功"><span class="toc-nav-number">1.4.0.0.0.2.</span> <span class="toc-nav-text">&#x8F93;&#x5165;http://192.168.111.10:50070&#x67E5;&#x770B;&#x662F;&#x5426;&#x542F;&#x52A8;&#x6210;&#x529F;</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#快速hdfs集群笔记"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x5FEB;&#x901F;HDFS&#x96C6;&#x7FA4;&#x7B14;&#x8BB0;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#节点的介绍"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">&#x8282;&#x70B9;&#x7684;&#x4ECB;&#x7ECD;&#xFF1A;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#准备"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">&#x51C6;&#x5907;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#安装rz"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">&#x5B89;&#x88C5;rz</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#设置ssh免密码登录"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">&#x8BBE;&#x7F6E;SSH&#x514D;&#x5BC6;&#x7801;&#x767B;&#x5F55;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#下载hadoop"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">&#x4E0B;&#x8F7D;Hadoop</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#开始搭建hdfs"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">&#x5F00;&#x59CB;&#x642D;&#x5EFA;HDFS</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#格式化namenode-启动hdfs系统"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">&#x683C;&#x5F0F;&#x5316;NameNode&#x3001;&#x542F;&#x52A8;HDFS&#x7CFB;&#x7EDF;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#输入jps查看节点是否启动"><span class="toc-nav-number">1.7.0.0.0.1.</span> <span class="toc-nav-text">&#x8F93;&#x5165;jps&#x67E5;&#x770B;&#x8282;&#x70B9;&#x662F;&#x5426;&#x542F;&#x52A8;</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#输入http1921681111050070查看是否启动成功"><span class="toc-nav-number">1.7.0.0.0.2.</span> <span class="toc-nav-text">&#x8F93;&#x5165;http://192.168.111.10:50070&#x67E5;&#x770B;&#x662F;&#x5426;&#x542F;&#x52A8;&#x6210;&#x529F;</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
         
         </div>
       </aside>
@@ -350,6 +393,8 @@ hostnamectl set-hostname slave2    （立即生效）<br>
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
+                          <a class="tag" href="/tags/#Hadoop" title="Hadoop">Hadoop</a>
+                        
                     </div>
                 </section>
                 
