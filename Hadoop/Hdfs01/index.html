@@ -22,7 +22,7 @@
         
     </title>
 
-    <link rel="canonical" href="http://www.nailuo.com/Hadoop/Hdfs01/">
+    <link rel="canonical" href="http://www.nailuo.com/Hadoop/hdfs01/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -146,6 +146,13 @@
 
                         
                         <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
                             <a href="/archive/">Archives</a>
                         </li>
                         
@@ -154,13 +161,6 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -231,14 +231,14 @@ hostnamectl set-hostname master   （立即生效）<br>
 hostnamectl set-hostname slave1    （立即生效）<br>
 hostnamectl set-hostname slave2    （立即生效）<br>
 测试:<br>
-<img src="/Hadoop/Hdfs01/ping.png" alt="Theme NaiLuo"></p>
+<img src="/Hadoop/hdfs01/Hdfs01/ping.png" alt="Theme NaiLuo"></p>
 </li>
 <li>
 <p>安装jdk,配置环境变量:<br>
 测试:<br>
-<img src="/Hadoop/Hdfs01/java.png" alt="Theme NaiLuo"><br>
+<img src="/Hadoop/hdfs01/Hdfs01/java.png" alt="Theme NaiLuo"><br>
 环境变量配置<br>
-<img src="/Hadoop/Hdfs01/profile.png" alt="Theme NaiLuo"></p>
+<img src="/Hadoop/hdfs01/Hdfs01/profile.png" alt="Theme NaiLuo"></p>
 </li>
 </ol>
 <h2 id="安装rz">安装rz</h2>
@@ -262,26 +262,26 @@ hostnamectl set-hostname slave2    （立即生效）<br>
 <li>配置hadoop的环境变量,在上图已有配置截图.</li>
 <li>输入&quot;source /etc/profile&quot;重新加载环境变量.</li>
 <li>然后使用hadoop命令测试,出现下图则配置成功.<br>
-<img src="/Hadoop/Hdfs01/hadoop.png" alt="Theme NaiLuo"></li>
+<img src="/Hadoop/hdfs01/Hdfs01/hadoop.png" alt="Theme NaiLuo"></li>
 <li>使用EverEdit连接master.<br>
 EverEdit链接: <a href="https://pan.baidu.com/s/1CjqfBM8UEU6WpZXfn1DBcA" target="_blank" rel="noopener">https://pan.baidu.com/s/1CjqfBM8UEU6WpZXfn1DBcA</a> 提取码: x17y<br>
-<img src="/Hadoop/Hdfs01/e1.png" alt="Theme NaiLuo"><br>
-<img src="/Hadoop/Hdfs01/e2.png" alt="Theme NaiLuo"><br>
-<img src="/Hadoop/Hdfs01/e3.png" alt="Theme NaiLuo"></li>
+<img src="/Hadoop/hdfs01/Hdfs01/e1.png" alt="Theme NaiLuo"><br>
+<img src="/Hadoop/hdfs01/Hdfs01/e2.png" alt="Theme NaiLuo"><br>
+<img src="/Hadoop/hdfs01/Hdfs01/e3.png" alt="Theme NaiLuo"></li>
 <li>找到/home/mly/hadoop-2.6.0/etc/hadoop/目录下.<br>
-<img src="/Hadoop/Hdfs01/ml.png" alt="Theme NaiLuo"></li>
+<img src="/Hadoop/hdfs01/Hdfs01/ml.png" alt="Theme NaiLuo"></li>
 <li>修改hadoop-env.sh文件<br>
-<img src="/Hadoop/Hdfs01/jdk8.png" alt="Theme NaiLuo"></li>
+<img src="/Hadoop/hdfs01/Hdfs01/jdk8.png" alt="Theme NaiLuo"></li>
 <li>修改core-site.xml文件<br>
-<img src="/Hadoop/Hdfs01/core-site.png" alt="Theme NaiLuo"></li>
+<img src="/Hadoop/hdfs01/Hdfs01/core-site.png" alt="Theme NaiLuo"></li>
 <li>修改hdfs-site.xml文件<br>
-<img src="/Hadoop/Hdfs01/hdfs-site.png" alt="Theme NaiLuo"></li>
+<img src="/Hadoop/hdfs01/Hdfs01/hdfs-site.png" alt="Theme NaiLuo"></li>
 <li>修改mapred-site.xml文件<br>
-<img src="/Hadoop/Hdfs01/mapred-site.png" alt="Theme NaiLuo"></li>
+<img src="/Hadoop/hdfs01/Hdfs01/mapred-site.png" alt="Theme NaiLuo"></li>
 <li>修改slaves文件<br>
-<img src="/Hadoop/Hdfs01/slaves.png" alt="Theme NaiLuo"></li>
+<img src="/Hadoop/hdfs01/Hdfs01/slaves.png" alt="Theme NaiLuo"></li>
 <li>修改yarn-site.xml文件<br>
-<img src="/Hadoop/Hdfs01/yarn-site.png" alt="Theme NaiLuo"></li>
+<img src="/Hadoop/hdfs01/Hdfs01/yarn-site.png" alt="Theme NaiLuo"></li>
 <li>使用scp -r /home/mly/hadoop-2.6.0 root@slave1:/home/mly将配置好的文件分别发送给slave1与slave2</li>
 </ol>
 <h2 id="格式化namenode-启动hdfs系统">格式化NameNode、启动HDFS系统</h2>
@@ -294,12 +294,12 @@ EverEdit链接: <a href="https://pan.baidu.com/s/1CjqfBM8UEU6WpZXfn1DBcA" target
 <p>输入命令：<a href="http://start-all.sh" target="_blank" rel="noopener">start-all.sh</a></p>
 </blockquote>
 <h6 id="输入jps查看节点是否启动">输入jps查看节点是否启动</h6>
-<p><img src="/Hadoop/Hdfs01/jps.png" alt="Theme NaiLuo"><br>
-<img src="/Hadoop/Hdfs01/jps2.png" alt="Theme NaiLuo"><br>
-<img src="/Hadoop/Hdfs01/jps3.png" alt="Theme NaiLuo"></p>
+<p><img src="/Hadoop/hdfs01/Hdfs01/jps.png" alt="Theme NaiLuo"><br>
+<img src="/Hadoop/hdfs01/Hdfs01/jps2.png" alt="Theme NaiLuo"><br>
+<img src="/Hadoop/hdfs01/Hdfs01/jps3.png" alt="Theme NaiLuo"></p>
 <h6 id="输入http1921681111050070查看是否启动成功">输入http://192.168.111.10:50070查看是否启动成功</h6>
-<p><img src="/Hadoop/Hdfs01/m.png" alt="Theme NaiLuo"><br>
-<img src="/Hadoop/Hdfs01/m2.png" alt="Theme NaiLuo"></p>
+<p><img src="/Hadoop/hdfs01/Hdfs01/m.png" alt="Theme NaiLuo"><br>
+<img src="/Hadoop/hdfs01/Hdfs01/m2.png" alt="Theme NaiLuo"></p>
 
                 
 
@@ -308,7 +308,7 @@ EverEdit链接: <a href="https://pan.baidu.com/s/1CjqfBM8UEU6WpZXfn1DBcA" target
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/article/Vector学习/" data-toggle="tooltip" data-placement="top" title="Vector学习">&larr; Previous Post</a>
+                            <a href="/article/vector01/" data-toggle="tooltip" data-placement="top" title="Vector学习">&larr; Previous Post</a>
                         </li>
                     
                     
