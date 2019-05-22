@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- 爆炸红心效果 -->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/firework.js"></script>
+    <title>
+        
+          Java数据结构和算法 - 奈落 | Blog
+        
+    </title>
+
+    <link rel="canonical" href="http://www.nailuo.com/Java数据结构/sf03/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+
+    <link rel="stylesheet" href="/css/donate.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/article_header/article_bg.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#Java数据结构" title="Java数据结构">Java数据结构</a>
+                            
+                        </div>
+                        <h1>Java数据结构和算法</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by 奈落 on
+                            2019-05-22
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">奈落</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="java数据结构和算法三">Java数据结构和算法(三)</h2>
+<h3 id="冒泡排序">冒泡排序</h3>
+<pre><code>  这个名字的又来很好理解,一般河水中的冒泡,水滴刚冒出来的时候是比较小的, 随着慢慢向水面浮起会逐渐增大.
+  冒泡算法的运作规律如下:
+  1. 比较相邻的元素.如果第一个比第二个大,就交换它们两个.
+  2. 对每一对相邻元素做同样的工作,从开始第一对到结尾的最后一对.这步做完后,最后的元素会是最大的数(也就是第一波冒泡完成).
+  3. 正对所有的元素重复以上的步骤,除了最后一个.
+  4. 持续每次对越来越少的元素重复上面的步骤,知道没有任何一堆数字需要比较.
+</code></pre>
+<p>图片</p>
+<p><strong>代码如下：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BubbleSort</span></span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] sort(<span class="keyword">int</span>[] array)&#123;</span><br><span class="line">    <span class="comment">//这里for循环表示总共需要比较多少轮</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">1</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">      <span class="comment">//设定一个标记,若为true,则表示此次循环没有进行交换,也就是待排序序列已经有序,排序已经完成.</span></span><br><span class="line">      <span class="keyword">boolean</span> flag =<span class="keyword">true</span>;</span><br><span class="line">      <span class="comment">//这里for循环表示每轮参加的元素下标</span></span><br><span class="line">      <span class="comment">//对当前无序取键array[0...length-i]进行排序</span></span><br><span class="line">      <span class="comment">//j的范围很关键,这个范围是在逐步缩小的,因为每轮比较都会将最大的放在右边</span></span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> j =<span class="number">0</span>;j&lt;array.length-i;j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(array[j]&gt;array[j+<span class="number">1</span>])&#123;</span><br><span class="line">          <span class="keyword">int</span> temp =array[j];</span><br><span class="line">          array[j]=array[j+<span class="number">1</span>];</span><br><span class="line">          array[j+<span class="number">1</span>]=temp;</span><br><span class="line">          flag=<span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//第i轮排序的结果为</span></span><br><span class="line">      System.out.print(<span class="string">"第"</span>+i+<span class="string">"轮排序后的结果为:"</span>);</span><br><span class="line">      display(array);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> array;</span><br><span class="line">  &#125;</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">(<span class="keyword">int</span>[] array)</span></span>&#123;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">     System.out.print(array[i]+<span class="string">"  "</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   System.out.println();</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">   <span class="keyword">int</span>[] array = &#123;<span class="number">4</span>,<span class="number">2</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">3</span>&#125;;</span><br><span class="line">   System.out.println(<span class="string">"为排序数组顺序为:"</span>);</span><br><span class="line">   display(array);</span><br><span class="line">   System.out.println(<span class="string">"------------"</span>);</span><br><span class="line">   array=sort(array);</span><br><span class="line">   System.out.println(<span class="string">"-------------"</span>);</span><br><span class="line">   System.out.println(<span class="string">"晋国冒泡排序后的数组顺序为:"</span>);</span><br><span class="line">   display(array);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>结果</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">未排序数组顺序为:</span><br><span class="line"><span class="number">4</span>  <span class="number">2</span>  <span class="number">8</span>  <span class="number">9</span>  <span class="number">5</span>  <span class="number">7</span>  <span class="number">6</span>  <span class="number">1</span>  <span class="number">3</span>  </span><br><span class="line">------------</span><br><span class="line">第<span class="number">1</span>轮排序后的结果为:<span class="number">2</span>  <span class="number">4</span>  <span class="number">8</span>  <span class="number">5</span>  <span class="number">7</span>  <span class="number">6</span>  <span class="number">1</span>  <span class="number">3</span>  <span class="number">9</span>  </span><br><span class="line">第<span class="number">2</span>轮排序后的结果为:<span class="number">2</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">7</span>  <span class="number">6</span>  <span class="number">1</span>  <span class="number">3</span>  <span class="number">8</span>  <span class="number">9</span>  </span><br><span class="line">第<span class="number">3</span>轮排序后的结果为:<span class="number">2</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">1</span>  <span class="number">3</span>  <span class="number">7</span>  <span class="number">8</span>  <span class="number">9</span>  </span><br><span class="line">第<span class="number">4</span>轮排序后的结果为:<span class="number">2</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">1</span>  <span class="number">3</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span>  <span class="number">9</span>  </span><br><span class="line">第<span class="number">5</span>轮排序后的结果为:<span class="number">2</span>  <span class="number">4</span>  <span class="number">1</span>  <span class="number">3</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span>  <span class="number">9</span>  </span><br><span class="line">第<span class="number">6</span>轮排序后的结果为:<span class="number">2</span>  <span class="number">1</span>  <span class="number">3</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span>  <span class="number">9</span>  </span><br><span class="line">第<span class="number">7</span>轮排序后的结果为:<span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span>  <span class="number">9</span>  </span><br><span class="line">-------------</span><br><span class="line">经过冒泡排序后的数组顺序为:</span><br><span class="line"><span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span>  <span class="number">9</span></span><br></pre></td></tr></table></figure>
+<p>本来应该是 8 轮排序的，这里我们只进行了 7 轮排序，因为第 7 轮排序之后已经是有序数组了。<br>
+<strong>冒泡排序解释：</strong><br>
+冒泡排序是由两个for循环构成,第一个for循环变量i表示总共需要多少轮比较,第二个for循环的变量j表示每轮参与比较的元素下标[0,1,2…],因为每轮都会比较出一个最大值放在最右边,所以每轮比较后的元素个数都会少一个,这也是为什么j的范围是逐渐减小.</p>
+<p><strong>冒泡排序性能分析：</strong><br>
+假设参与比较的数组元素个数为N,则第一轮排序有N-1次比较,第二轮有N-2次,以此类推,这种序列的求和公式为:<br>
+(N-1)+(N-2)+…+1=N*(N-1)/2<br>
+当N的值很大时,算法比较次数约N²/2次比较,忽略减1.<br>
+假设数据是随机的,那么每次比较可能要交换位置,可能不会交换,假设概率为50%,那么交换次数为N²/4.不过如果是最坏的情况,初始数据是逆序的,那么每次比较都要交换位置.<br>
+交换和比较次数都和N²成正比.由于常熟不算大O表示法中,忽略2和4,那么冒泡排序运行都需要O(N²)时间级别.<br>
+其实无论何时,只要看见一个循环嵌套在另一个循环中,我们都可以怀疑这个算法的运行时间为O(N²)级,外层循环执行N次,内层循环对每一次外层循环都执行N次(或者几分之N次).这就意味着大约需要执行N次某个基本操作.</p>
+<h3 id="选择排序">选择排序</h3>
+<pre><code>选择排序是每一次从待排序的数据元素中选出最小的一个元素,放在序列的起始位置,知道全部待排序的数据元素排完.
+分为三步:
+1. 从待排序序列中,找到关键字最小的元素.
+2. 如果最小元素不是待排序序列的第一个元素,将其和第一个元素互换
+3. 从余下的N-1个元素中,找出关键字最小的元素,重复第1,2步,直到排序结束
+</code></pre>
+<p>图片</p>
+<p><strong>代码如下：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ChoiceSort</span></span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] sort(<span class="keyword">int</span>[] array)&#123;</span><br><span class="line">    <span class="comment">//总共要经过N-1轮比较</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;array.length-<span class="number">1</span>;i++)&#123;</span><br><span class="line">      <span class="keyword">int</span> min =i;</span><br><span class="line">      <span class="comment">//每轮需要比较的次数</span></span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> j =i+<span class="number">1</span>;j&lt;array.length;j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(array[j]&lt;array[min])&#123;</span><br><span class="line">          min=j;<span class="comment">//记录目前能找到的最小值元素的下标</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//将找到的最小值和i位置所在的值进行交换</span></span><br><span class="line">      <span class="keyword">if</span>(i!=min)&#123;</span><br><span class="line">        <span class="keyword">int</span> temp =array[i];</span><br><span class="line">        array[i]=array[min];</span><br><span class="line">        array[min]=temp;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//第i轮排序的结果为</span></span><br><span class="line">      System.out.print(<span class="string">"第"</span>+(i+<span class="number">1</span>)+<span class="string">"轮排序后的结果为:"</span>);</span><br><span class="line">      display(array);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> array;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//遍历显示数组</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">(<span class="keyword">int</span>[] array)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span> ;i&lt;array.length;i++)&#123;</span><br><span class="line">      System.out.print(array[i]+<span class="string">" "</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] arg)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] array=&#123;<span class="number">4</span>,<span class="number">2</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">3</span>&#125;;</span><br><span class="line">    display(array);</span><br><span class="line">    System.out.println(<span class="string">"-----------"</span>);</span><br><span class="line">    array=sort(array);</span><br><span class="line">    System.out.println(<span class="string">"-----------"</span>);</span><br><span class="line">    System.out.println(<span class="string">"经过选择排序后的数组顺序为:"</span>);</span><br><span class="line">    display(array);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>结果</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span> <span class="number">2</span> <span class="number">8</span> <span class="number">9</span> <span class="number">5</span> <span class="number">7</span> <span class="number">6</span> <span class="number">1</span> <span class="number">3</span> </span><br><span class="line">-----------</span><br><span class="line">第<span class="number">1</span>轮排序后的结果为:<span class="number">1</span> <span class="number">2</span> <span class="number">8</span> <span class="number">9</span> <span class="number">5</span> <span class="number">7</span> <span class="number">6</span> <span class="number">4</span> <span class="number">3</span> </span><br><span class="line">第<span class="number">2</span>轮排序后的结果为:<span class="number">1</span> <span class="number">2</span> <span class="number">8</span> <span class="number">9</span> <span class="number">5</span> <span class="number">7</span> <span class="number">6</span> <span class="number">4</span> <span class="number">3</span> </span><br><span class="line">第<span class="number">3</span>轮排序后的结果为:<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">9</span> <span class="number">5</span> <span class="number">7</span> <span class="number">6</span> <span class="number">4</span> <span class="number">8</span> </span><br><span class="line">第<span class="number">4</span>轮排序后的结果为:<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">7</span> <span class="number">6</span> <span class="number">9</span> <span class="number">8</span> </span><br><span class="line">第<span class="number">5</span>轮排序后的结果为:<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">7</span> <span class="number">6</span> <span class="number">9</span> <span class="number">8</span> </span><br><span class="line">第<span class="number">6</span>轮排序后的结果为:<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">9</span> <span class="number">8</span> </span><br><span class="line">第<span class="number">7</span>轮排序后的结果为:<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">9</span> <span class="number">8</span> </span><br><span class="line">第<span class="number">8</span>轮排序后的结果为:<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> </span><br><span class="line">-----------</span><br><span class="line">经过选择排序后的数组顺序为:</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span></span><br></pre></td></tr></table></figure>
+<p><strong>选择排序性能分析：</strong><br>
+选择排序和冒泡排序执行了相同次数的比较:N*(N-1)/2,但是之多只进行了N次交换.<br>
+当N值很大时,比较次数是主要的,所以和冒泡排序一样,用大O表示是O(N²)时间级别.但是由于选择排序交换的次数较少,所以选择排序无疑是比冒泡排序快的,当N值较小时,如果交换时间比选择时间大的多,那么选择排序是相当快的.</p>
+<h3 id="插入排序">插入排序</h3>
+<pre><code>  直接插入排序基本思想是每一步将一个待排序的记录,插入到前面已经排好序的有序序列中去,知道查完所有元素为止.
+  插入排序还分为直接插入排序,二分插入排序,链表插入排序,希尔排序等等.
+  图片
+</code></pre>
+<p><strong>代码如下：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InsertSort</span></span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] sort(<span class="keyword">int</span>[] array)&#123;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="comment">//从下标为1的元素开始选择合适的位置插入,因为下标为0的只有一个元素,默认是有序的</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">1</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">      <span class="keyword">int</span> tmp = array[i];<span class="comment">//记录要插入的数据</span></span><br><span class="line">      j=i;</span><br><span class="line">      <span class="keyword">while</span>(j&gt;<span class="number">0</span>&amp;&amp;tmp&lt;array[j-<span class="number">1</span>])&#123;</span><br><span class="line">        array[j]=array[j-<span class="number">1</span>];</span><br><span class="line">        j--;</span><br><span class="line">      &#125;</span><br><span class="line">      array[j]=tmp;<span class="comment">//存在比其小的数,插入</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> array;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//遍历显示数组</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">(<span class="keyword">int</span>[] array)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">      System.out.print(array[i]+<span class="string">""</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] array = &#123;<span class="number">4</span>,<span class="number">2</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">3</span>&#125;;</span><br><span class="line">    System.out.println(<span class="string">"未排序数组顺序为:"</span>);</span><br><span class="line">    display(array);</span><br><span class="line">    System.out.println(<span class="string">"----------------"</span>);</span><br><span class="line">    array=sort(array);</span><br><span class="line">    System.out.println(<span class="string">"----------------"</span>);</span><br><span class="line">    System.out.println(<span class="string">"经过插入排序后的数组顺序为:"</span>);</span><br><span class="line">    display(array);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>结果</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">未排序数组顺序为:</span><br><span class="line"><span class="number">428957613</span></span><br><span class="line">----------------</span><br><span class="line">----------------</span><br><span class="line">经过插入排序后的数组顺序为:</span><br><span class="line"><span class="number">123456789</span></span><br></pre></td></tr></table></figure>
+<p><strong>插入排序性能分析：</strong><br>
+在第一轮排序中,它最多比较一次,第二轮最多比较两次,依次类推,第N轮,最多比较N-1次,因此有1+2+3+…+N-1=N*(N-1)/2.<br>
+假设在每次论排序发现插入点时,平均只有全体数据项的一半真的进行了比较,我们除以2得到:N*(N-1)/4.用大O表示法大概需要O(N²)时间级别<br>
+复制的次数大致等于比较的次数,但是依次复制与依次交换的时间耗时不同,所以相对于随机数据,插入排序比冒泡快一倍,比选择排序略快.<br>
+这里需要注意的是,如果要进行逆序排序,那么每次比较和移动都会进行,这时候并不会比冒泡排序快.</p>
+<h3 id="总结">总结</h3>
+<pre><code>    上面的三种排序,冒泡,选择,插入用大O表示法都需要O(N²)时间级别.一般不会选择冒泡排序,虽然冒泡排序是书写最简单的,但是平均性能是没有选择排序和插入排序好的.
+    选择排序把交换次数降到最低,但是比较次数还是挺大的,当数据量小,并且交换数据相对于比较数据更加耗时的情况下,可以应用选择排序.
+    在大多数情况下,假设数据量比较小或基本有序时,插入排序是三种算法中最好的选择.
+</code></pre>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/Java数据结构/sf02/" data-toggle="tooltip" data-placement="top" title="Java数据结构和算法">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!--打赏-->
+                
+                    <div class="reward">
+                        <div class="reward-button">赏 <span class="reward-code"> 
+                            <span class="alipay-code"> <img class="alipay-img" src="alipay_url"><b>支付宝打赏</b></span> 
+                            <span class="wechat-code"> <img class="wechat-img" src="wechatpay_url"><b>微信打赏</b> </span>
+                            </span></div>
+                        <p class="reward-notice">赞赏一下</p>
+                    </div>
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+  
+    <style>
+      span.toc-nav-number{
+        display: none
+      }
+    </style>
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#java数据结构和算法三"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Java&#x6570;&#x636E;&#x7ED3;&#x6784;&#x548C;&#x7B97;&#x6CD5;(&#x4E09;)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#冒泡排序"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">&#x5192;&#x6CE1;&#x6392;&#x5E8F;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#选择排序"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">&#x9009;&#x62E9;&#x6392;&#x5E8F;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#插入排序"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">&#x63D2;&#x5165;&#x6392;&#x5E8F;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#总结"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">&#x603B;&#x7ED3;</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Java数据结构" title="Java数据结构">Java数据结构</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://blog.csdn.net/" target="_blank">CSDN Blog 奈落</a></li>
+                    
+                        <li><a href="http://dockone.io/people/" target="_blank">DockOne 奈落</a></li>
+                    
+                        <li><a href="https://yq.aliyun.com/u/" target="_blank">阿里云栖社区 奈落</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/nailuo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 奈落 2019 
+                    <br>
+                    Theme by <a href="http://beantech.org">BeanTech</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://www.mlyun.com">奈落</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=mlyun&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://www.nailuo.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'xxx';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<!--查看微博运行时间-->
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("11/05/2019 17:38:00");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+<!--动态桌面-->
+{% if theme.canvas_nest %}
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+{% endif %}
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="http://www.nailuo.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":300,"height":600},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
