@@ -21,13 +21,6 @@
     </url>
 
     <url>
-        <loc>http://www.nailuo.com/categories/List/</loc>
-        <lastmod>2019-05-15T09:49:56.799Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.nailuo.com/categories/Linux/</loc>
         <lastmod>2019-05-17T09:55:51.870Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -37,6 +30,27 @@
     <url>
         <loc>http://www.nailuo.com/categories/Hadoop/</loc>
         <lastmod>2019-05-20T09:33:06.388Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.nailuo.com/categories/Vector/</loc>
+        <lastmod>2019-05-21T06:09:57.042Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.nailuo.com/categories/List/</loc>
+        <lastmod>2019-05-21T06:23:44.868Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.nailuo.com/categories/Map/</loc>
+        <lastmod>2019-05-22T02:49:34.825Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
